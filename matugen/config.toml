@@ -1,0 +1,55 @@
+[config]
+# ...
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+# ...
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/colors.lua' # If using lua config replace *.conf* with *.lua* at the end
+# ...
+[templates.nvim]
+input_path = '~/.config/matugen/templates/nvim-colors.vim'
+output_path = '~/.config/nvim/colors/matugen.vim'
+post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.nvchad]
+input_path = '~/.config/matugen/templates/nvchad.lua'
+output_path = '~/.config/nvim/lua/themes/matugen.lua'
+post_hook = 'nvim --headless "+lua require(\"base46\").load_all_highlights()" +qa'
+# ...
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = '~/.config/matugen/post-hook-scripts/gtk-themes-reload.sh'
+# ...
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+# ...
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/your-theme'
+post_hook = 'pkill -USR1 cava'
+# ...
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+# ...
+[templates.swaync]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "~/.config/swaync/colors.css"
+post_hook = "pkill -SIGUSR2 swaync"
+# ...
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors/matugen.rasi'
+# ...

@@ -1,0 +1,333 @@
+{
+    "layer": "top",
+    "height": 40,
+    "spacing": 12,
+    "modules-left": [
+        "group/power",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "group/network",
+        "group/backlight",
+        "group/bat",
+        "group/pulseaudio",
+        "clock"
+    ],
+    "custom/rofi": {
+        "format": "󰣇",
+        "on-click": "rofi -show drun",
+        "interval": 0
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y - %m - %d}"
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
+    },
+    "group/backlight": {
+        "orientation": "horizontal",
+        "drawer": {
+            "children-class": [
+                "backlight/slider"
+            ]
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ]
+    },
+    "group/pulseaudio": {
+        "orientation": "horizontal",
+        "drawer": {
+            "children-class": [
+                "pulseaudio/slider"
+            ]
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "group/network": {
+        "orientation": "horizontal",
+        "drawer": {
+            "children-class": [
+                "network#name"
+            ]
+        },
+        "modules": [
+            "network",
+            "network#name"
+        ]
+    },
+    "group/bat": {
+        "orientation": "horizontal",
+        "drawer": {
+            "children-class": [
+                "battery#name"
+            ]
+        },
+        "modules": [
+            "battery",
+            "battery#name"
+        ]
+    },
+    "group/power": {
+        "orientation": "horizontal",
+        "drawer": {
+            "children-class": [
+                "custom/power",
+                "custom/reboot",
+                "custom/lock",
+                "custom/exit"
+            ]
+        },
+        "modules": [
+            "custom/rofi",
+            "custom/power",
+            "custom/reboot",
+            "custom/lock",
+            "custom/exit"
+        ]
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "shutdown now"
+    },
+    "custom/reboot": {
+        "format": "",
+        "on-click": "reboot now"
+    },
+    "custom/lock": {
+        "format": "",
+        "on-click": "hyprlock"
+    },
+    "custom/exit": {
+        "format": "󰈆",
+        "on-click": "pkill hyprland"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": [
+            "󰃝",
+            "󰃟",
+            "󰃞",
+            "󰃠"
+        ]
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨",
+        ]
+    },
+    "network#name": {
+        "format": "{ifname}",
+        "format-wifi": "{essid}",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨",
+        ]
+    },
+    "mpris": {
+        "format": "{artist} - {title}",
+        "format-paused": "{artist} - <i>{title}<i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        // "ignored-players": ["firefox"]
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "battery": {
+        "interval": 60,
+        "format": "{icon}",
+        "format-icons": {
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        },
+    },
+    "battery#name": {
+        "interval": 60,
+        "format": " {capacity}%",
+        "format-icons": {
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        },
+    },
+    "hyprland/workspaces": {
+        "format": " {icon} ",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "",
+        },
+        "persistent-workspaces": {
+            "*": 5, // 5 workspaces by default on every monitor
+            "HDMI-A-1": 3 // but only three on HDMI-A-1
+        }
+    },
+    "hyprland/window": {
+        "max-length": 50
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{}% ",
+        "max-length": 10
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{percentage_free} 󰨣",
+        "unit": "GB"
+        // 0.25 GB out of 2000.00 GB available. Alternatively 241.3MiB out of 1.9TiB available.
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{}% ",
+        "max-length": 10
+    },
+    "cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 60,
+        "autosens": 0,
+        "sensitivity": 0.01,
+        "bars": 8,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "hide_on_silence": false,
+        // "format_silent": "quiet",
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+}

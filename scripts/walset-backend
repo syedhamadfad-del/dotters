@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+   echo "Usage: $0 <path-to-image>"
+   exit 1
+fi
+
+IMAGE="$1"
+
+notify-send "Changing Theme" "Applying the wallpaper and colors, please wait."
+
+awww img "$IMAGE" --transition-type="wipe" --transition-fps="60"
+
+matugen image "$IMAGE" --source-color-index 0
+
+notify-send "Theme Applied" "The wallpaper and theme has been updated succsessfully!"
