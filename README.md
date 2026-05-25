@@ -23,7 +23,7 @@ git clone --depth=1 https://github.com/syedhamadfad-del/dotters
 If you want, use my wallpapers too:
 
 ```
-git clone --depth=1 https://github.com/syedhamadfad-del/walls
+git clone --depth=1 https://github.com/syedhamadfad-del/Wallpapers
 ```
 
 ### 2. backup configs
@@ -35,14 +35,37 @@ mv ~/.config ~/.config.bak
 ### 3. install stuff
 
 ```
-yay -S fastfetch nautilus hyprland kitty matugen neovim waybar swaync --needed
+yay -S rofi fastfetch nautilus firefox hyprland kitty matugen neovim waybar swaync --needed
 ```
 
 ### 3. cd into repo and move to config
 
 ```
 cd dotters
-cp -r fastfetch swaync gtk-3.0 gtk-4.0 hypr kitty matugen nvim waybar ~/.config 
+cp -r fastfetch swaync gtk-3.0 gtk-4.0 hypr kitty rofi matugen nvim waybar ~/.config 
 ```
 
+### (extra) add wallpapers
 
+```
+cp -r ~/Wallpapers ~/Pictures
+```
+
+# keybindings
+
+btw the `super` key is the Windows key.
+
+| Name | Bind |
+| -------- | -------- |
+| Terminal | Super + Return |
+| Nautilus (file manager) | Super + E |
+| Firefox  | Super + W |
+| Close window | Super + Q |
+| Rofi | Super + D |
+| SwayNC | Super + N |
+| Switch Theme | Super + T |
+| Reload Waybar + SwayNC | Super + R |
+
+# special thanks
+
+Thanks to [hayyaoe](https://github.com/hayyaoe), [adi1090x](https://github.com/adi1090x), [voidptrx](https://github.com/voidptrx) and [romkatv](https://github.com/romkatv) for dotfiles/wallpapers/prompts.
