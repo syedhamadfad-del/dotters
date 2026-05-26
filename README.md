@@ -35,14 +35,14 @@ mv ~/.config ~/.config.bak
 ### 3. install stuff
 
 ```
-yay -S rofi fastfetch nautilus firefox hyprland kitty matugen neovim waybar swaync --needed
+yay -S rofi fastfetch nautilus firefox hyprland kitty hyprlock wlogout matugen neovim waybar swaync --needed
 ```
 
 ### 3. cd into repo and move to config
 
 ```
 cd dotters
-cp -r fastfetch swaync gtk-3.0 gtk-4.0 hypr kitty rofi matugen nvim waybar ~/.config 
+cp -r fastfetch swaync gtk-3.0 gtk-4.0 hypr wlogout kitty rofi matugen nvim waybar ~/.config 
 ```
 
 ### (extra) add wallpapers
