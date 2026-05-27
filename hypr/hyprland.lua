@@ -378,5 +378,5 @@ hl.layer_rule({
 hl.layer_rule({
    name = "rofi-popup",
    match = { namespace = "rofi" },
-   animation = "slide left",
+   animation = "slide bottom",
 })
